@@ -28,7 +28,7 @@ export default function Navbar() {
           : 'bg-transparent text-brand-white border-transparent'
       )}
     >
-      <div className="font-heading font-bold tracking-tight text-xl uppercase">
+      <div className={cn("font-heading font-bold tracking-tight text-xl uppercase", scrolled ? "text-brand-black" : "text-brand-white")}>
         Vantique
       </div>
       <div className="hidden md:flex items-center gap-8 font-outfit text-sm font-medium">
