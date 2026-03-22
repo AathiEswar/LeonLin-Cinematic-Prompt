@@ -83,11 +83,11 @@ export default function SelectedWork() {
         </div>
 
         {/* Modular Asymmetric Grid */}
-        <div className="work-grid grid grid-cols-1 md:grid-cols-2 gap-x-12 xl:gap-x-32 gap-y-32">
+        <div className="work-grid grid grid-cols-1 md:grid-cols-2 gap-x-12 xl:gap-x-32 gap-y-16">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`work-card group cursor-pointer flex flex-col ${index % 2 === 1 ? 'md:mt-48' : ''}`}
+              className={`work-card group cursor-pointer flex flex-col ${index % 2 === 1 ? 'md:mt-24' : ''}`}
             >
               {/* Image Container with subtle hover scale */}
               <div className="w-full relative overflow-hidden rounded-2xl aspect-[4/5] bg-[#111] mb-8">
