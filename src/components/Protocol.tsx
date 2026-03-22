@@ -73,10 +73,9 @@ export default function Protocol() {
       // Inward content movement for a nice effect
       gsap.from(card.querySelector('.card-content'), {
         y: 100,
-        opacity: 0,
         scrollTrigger: {
           trigger: card,
-          start: 'top 70%',
+          start: 'top 50%',
           end: 'top 30%',
           scrub: true,
         }
@@ -84,13 +83,11 @@ export default function Protocol() {
 
       if (i < cards.length - 1) {
         gsap.to(card, {
-          scale: 0.9,
-          opacity: 0.5,
-          filter: "blur(15px)",
+          scale: 0.8,
           scrollTrigger: {
             trigger: cards[i + 1],
             start: "top bottom",
-            end: "top 10%",
+            end: "top 0",
             scrub: true,
           }
         });

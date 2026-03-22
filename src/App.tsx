@@ -28,6 +28,16 @@ function App() {
 
     lenis.on('scroll', ScrollTrigger.update);
 
+    // Handle smooth scrolling for anchor links to prevent GSAP jumps
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (target && target.hash && target.hash.startsWith('#') && target.origin === window.location.origin) {
+        e.preventDefault();
+        lenis.scrollTo(target.hash, { offset: 0, duration: 1.5 });
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+
     gsap.ticker.add((time) => {
       lenis.raf(time * 500);
     });
@@ -47,13 +57,13 @@ function App() {
 
         // Animate scaling and blur when the NEXT section overlaps it
         gsap.to(section, {
-          scale: 0.92,
-          opacity: 0.6,
+          scale: 0.85,
+          opacity: 0.8,
           filter: "blur(5px)",
           ease: "none",
           scrollTrigger: {
             trigger: sections[i + 1],
-            start: "top bottom",
+            start: "top 60%", // Transition starts later (when next section is 60% up)
             end: "top top",
             scrub: true,
           }
@@ -65,6 +75,7 @@ function App() {
 
     return () => {
       lenis.destroy();
+      document.removeEventListener('click', handleAnchorClick);
       gsap.ticker.remove(lenis.raf as any);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
@@ -78,12 +89,12 @@ function App() {
 
       {/* Replaced sticky top-0 with relative positioning for GSAP pinning */}
       <main ref={mainRef} className="flex flex-col min-h-screen bg-brand-black">
-        <div className="stack-section relative w-full min-h-screen z-[1] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Hero /></div>
-        <div className="stack-section relative w-full min-h-screen z-[2] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
-        <div className="stack-section relative w-full min-h-screen z-[3] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
-        <div className="stack-section relative w-full min-h-screen z-[4] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
-        <div className="stack-section relative w-full min-h-screen z-[5] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
-        <div className="stack-section relative w-full z-[6] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Footer /></div>
+        <div id="hero" className="stack-section relative w-full min-h-screen mb-[50vh] z-[1] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Hero /></div>
+        <div id="features" className="stack-section relative w-full min-h-screen mb-[50vh] z-[2] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
+        <div id="philosophy" className="stack-section relative w-full min-h-screen mb-[50vh] z-[3] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
+        <div id="protocol" className="stack-section relative w-full min-h-screen mb-[50vh] z-[4] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
+        <div id="membership" className="stack-section relative w-full min-h-screen mb-[50vh] z-[5] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
+        <div id="footer" className="stack-section relative w-full z-[6] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Footer /></div>
       </main>
     </>
   );
