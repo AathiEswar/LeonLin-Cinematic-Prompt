@@ -98,36 +98,38 @@ export default function Navbar() {
       {/* Primary Navigation Bar */}
       <nav
         className={cn(
-          'fixed top-6 left-1/2 -translate-x-1/2 transition-colors duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)]',
-          'w-11/12 max-w-6xl rounded-full px-6 md:px-8 py-4 flex items-center justify-between z-[60]',
+          'fixed top-6 left-1/2 -translate-x-1/2 transition-all duration-[0.4s] ease-[cubic-bezier(0.25,1,0.5,1)]',
+          'w-11/12 max-w-7xl rounded-full px-6 md:px-10 flex items-center justify-between z-[60]',
           scrolled && !menuOpen
-            ? 'bg-brand-white/80 backdrop-blur-md text-brand-black border border-brand-black/10 shadow-lg' 
-            : 'bg-transparent text-brand-white border-transparent'
+            ? 'bg-black/40 backdrop-blur-xl text-brand-white border border-white/10 shadow-lg py-3'
+            : 'bg-transparent text-brand-white/80 border-transparent py-5'
         )}
       >
-        <div className={cn("font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500", (scrolled && !menuOpen) ? "text-brand-black" : "text-brand-white")}>
+        <div className="font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500 hover:text-white cursor-pointer">
           Vantique
         </div>
-        
-        {/* Desktop Links (Hidden on mobile) */}
-        <div className="hidden lg:flex items-center gap-10 font-outfit text-sm font-medium relative z-[60]">
-          {menuLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-brand-gray transition-colors">
-              {link.name}
-            </a>
-          ))}
-        </div>
 
-        {/* Right Action Area */}
+        {/* Right Area: Links & Hamburger */}
         <div className="flex items-center relative z-[60]">
-          {/* Desktop CTA */}
-          <button className="hidden lg:flex items-center gap-2 font-outfit text-sm font-semibold hover:text-brand-gray transition-colors">
-            Start Project
-          </button>
+          {/* Desktop Links (Hidden on mobile) */}
+          <div className="hidden lg:flex items-center gap-8 font-outfit text-sm font-medium group/nav">
+            {menuLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative flex items-center px-2 py-1 transition-all duration-[0.4s] ease-out opacity-100 group-hover/nav:opacity-40 hover:!opacity-100 hover:scale-[1.03] group/link text-brand-white/90 hover:text-white"
+              >
+                <span className="transition-transform duration-[0.4s] ease-out group-hover/link:-translate-y-[2px] block">
+                  {link.name}
+                </span>
+                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-[0.4s] ease-out group-hover/link:w-full" />
+              </a>
+            ))}
+          </div>
 
           {/* Hamburger Trigger (Mobile Only) */}
-          <button 
-            onClick={toggleMenu} 
+          <button
+            onClick={toggleMenu}
             className={cn(
               "flex lg:hidden items-center justify-center p-2 -mr-2 hover:opacity-70 transition-all duration-300",
               menuOpen ? "text-brand-white" : ""
@@ -151,8 +153,8 @@ export default function Navbar() {
           {menuLinks.map((link, i) => (
             <div key={link.name} className="overflow-hidden">
               <div className="menu-link-wrapper flex">
-                <a 
-                  href={link.href} 
+                <a
+                  href={link.href}
                   onClick={handleLinkClick}
                   className="group flex items-center font-heading font-medium text-[9vw] sm:text-5xl md:text-7xl tracking-tight transition-all duration-500"
                 >

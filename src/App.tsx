@@ -65,11 +65,11 @@ function App() {
           gsap.to(section, {
             scale: 0.85,
             opacity: 0.8,
-            filter: "blur(5px)",
+            filter: "blur(2px)",
             ease: "none",
             scrollTrigger: {
               trigger: sections[i + 1],
-              start: "top 70%", // Transition starts later (when next section is 60% up)
+              start: "top 70%",
               end: "top top",
               scrub: true,
             }
@@ -97,12 +97,12 @@ function App() {
 
       {/* Replaced sticky top-0 with relative positioning for GSAP pinning */}
       <main ref={mainRef} className="flex flex-col min-h-screen bg-brand-black">
-        <div id="hero" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[1] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Hero /></div>
-        <div id="features" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[2] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
-        <div id="work" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[3] bg-[#0D0D0D] origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><SelectedWork /></div>
-        <div id="philosophy" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[4] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
-        <div id="protocol" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[5] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
-        <div id="membership" className="stack-section relative w-full min-h-screen md:mb-[50vh] z-[6] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
+        <div id="hero" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[1] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Hero /></div>
+        <div id="features" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[2] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
+        <div id="work" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[3] bg-[#0D0D0D] origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><SelectedWork /></div>
+        <div id="philosophy" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[4] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
+        <div id="protocol" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[5] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
+        <div id="membership" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[6] bg-brand-white origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
         <div id="footer" className="stack-section relative w-full z-[7] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Footer /></div>
       </main>
     </>
