@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import SelectedWork from './components/SelectedWork';
 import Philosophy from './components/Philosophy';
 import Protocol from './components/Protocol';
 import Membership from './components/Membership';
@@ -50,6 +51,8 @@ function App() {
         ScrollTrigger.create({
           trigger: section,
           start: () => section.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+          endTrigger: sections[i + 1],
+          end: "top top",
           pin: true,
           pinSpacing: false,
           invalidateOnRefresh: true, // Recalculate heights on resize
@@ -63,7 +66,7 @@ function App() {
           ease: "none",
           scrollTrigger: {
             trigger: sections[i + 1],
-            start: "top 60%", // Transition starts later (when next section is 60% up)
+            start: "top 70%", // Transition starts later (when next section is 60% up)
             end: "top top",
             scrub: true,
           }
@@ -91,10 +94,11 @@ function App() {
       <main ref={mainRef} className="flex flex-col min-h-screen bg-brand-black">
         <div id="hero" className="stack-section relative w-full min-h-screen mb-[50vh] z-[1] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Hero /></div>
         <div id="features" className="stack-section relative w-full min-h-screen mb-[50vh] z-[2] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
-        <div id="philosophy" className="stack-section relative w-full min-h-screen mb-[50vh] z-[3] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
-        <div id="protocol" className="stack-section relative w-full min-h-screen mb-[50vh] z-[4] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
-        <div id="membership" className="stack-section relative w-full min-h-screen mb-[50vh] z-[5] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
-        <div id="footer" className="stack-section relative w-full z-[6] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Footer /></div>
+        <div id="work" className="stack-section relative w-full min-h-screen mb-[50vh] z-[3] bg-[#0D0D0D] origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><SelectedWork /></div>
+        <div id="philosophy" className="stack-section relative w-full min-h-screen mb-[50vh] z-[4] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
+        <div id="protocol" className="stack-section relative w-full min-h-screen mb-[50vh] z-[5] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Protocol /></div>
+        <div id="membership" className="stack-section relative w-full min-h-screen mb-[50vh] z-[6] bg-brand-white origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
+        <div id="footer" className="stack-section relative w-full z-[7] bg-brand-black origin-top shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Footer /></div>
       </main>
     </>
   );

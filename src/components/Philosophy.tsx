@@ -9,102 +9,78 @@ export default function Philosophy() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.from(".split-word", {
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: 'top 50%',
-      },
-      y: 120,
-      opacity: 0,
-      duration: 1.2,
-      stagger: 0.05,
-      ease: 'power4.out',
+        start: 'top 75%',
+      }
     });
 
-    gsap.to(".parallax-bg", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-      y: 150,
-      ease: 'none',
-    });
-
-    gsap.from(".fade-text", {
-      scrollTrigger: {
-        trigger: ".fade-text",
-        start: 'top 80%',
-      },
+    tl.from('.about-heading', {
       y: 40,
       opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    });
+      duration: 1.2,
+      stagger: 0.1,
+      ease: 'power3.out'
+    })
+      .from('.about-subtext', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }, "-=0.8")
+      .from('.about-capabilities span', {
+        y: 10,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power2.out'
+      }, "-=0.6");
 
   }, { scope: containerRef });
 
-  const renderWords = (text: string, isItalic = false) => {
-    return text.split(" ").map((word, i) => (
-      <span key={i} className="inline-block overflow-hidden pb-4 mr-3 md:mr-6">
-        <span className={`inline-block split-word ${isItalic ? 'font-drama italic text-brand-gray' : 'font-heading font-bold'}`}>
-          {word}
-        </span>
-      </span>
-    ));
-  };
-
   return (
-    <section 
-      id="about" 
-      ref={containerRef} 
-      className="relative w-full min-h-[100dvh] flex flex-col justify-center bg-brand-black text-brand-white overflow-hidden py-32"
+    <section
+      id="about"
+      ref={containerRef}
+      className="relative w-full min-h-[100dvh] flex flex-col justify-center bg-brand-white text-brand-black overflow-hidden py-20"
     >
-      {/* Background Image & Gradient */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center parallax-bg h-[120%] opacity-40 grayscale"
-        style={{
-          top: '-10%',
-          backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=3540&auto=format&fit=crop')"
-        }}
-      />
-      <div className="absolute inset-0 z-10 bg-brand-black/90 mix-blend-multiply" />
-      <div className="absolute inset-x-0 bottom-0 h-1/3 z-10 bg-gradient-to-t from-brand-black to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-1/3 z-10 bg-gradient-to-b from-brand-white to-transparent opacity-5" />
-      
-      {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6">
-        <div className="mb-24 flex items-center gap-4">
-          <div className="w-12 h-[1px] bg-brand-gray"></div>
-          <span className="font-data text-sm uppercase tracking-widest text-brand-gray">The Manifesto</span>
-        </div>
-        
-        <div className="flex flex-col gap-12 md:gap-24 w-full md:w-4/5 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] mb-24">
-          <div>
-            {renderWords("Modern agencies ask:", false)}
-            <br />
-            {renderWords("What is trendy?", true)}
-          </div>
-          <div>
-            {renderWords("We ask:", false)}
-            <br />
-            {renderWords("What is timeless?", true)}
-          </div>
-        </div>
+      {/* Subtle Noise Overlay */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.06%22/%3E%3C/svg%3E')] mix-blend-multiply pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-brand-white/10">
-          <div />
-          <div>
-            <p className="fade-text font-outfit text-lg md:text-xl text-brand-light/80 leading-relaxed font-light">
-              Vantique Studio is a design-driven digital agency focused on creating experiences that feel timeless, intentional, and built to last. Guided by a refined, editorial aesthetic inspired by the Midnight Luxe style, the studio emphasizes clarity, restraint, and depth in every project.
-              <br /><br />
-              Its approach centers on crafting design systems that endure beyond trends, building interfaces that feel intuitive, consistent, and effortless, and delivering visual experiences rooted in simplicity rather than noise. 
-              <br /><br />
-              The goal is to help brands create digital products that not only stand out today but remain relevant over time, with a primary focus on inviting clients to start their project and build something lasting.
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col gap-24 md:gap-32">
+
+        {/* Top: 2-Part Layout */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-16 lg:gap-24">
+
+          {/* Left: Primary Statement */}
+          <div className="lg:w-[55%] flex flex-col gap-6">
+            <span className="about-heading font-data text-xs uppercase tracking-[0.2em] text-brand-black/60">Studio</span>
+            <h2 className="about-heading font-heading font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.15] text-brand-black">
+              We design and build digital experiences that feel as good as they look.
+            </h2>
+          </div>
+
+          {/* Right: Supporting Content */}
+          <div className="lg:w-[40%] flex flex-col lg:pb-3">
+            <p className="about-subtext font-outfit text-lg md:text-xl text-brand-black/80 leading-relaxed font-normal max-w-sm md:max-w-md">
+              We focus on clarity, motion, and structure — crafting interfaces that are not just visually refined, but functionally precise.
             </p>
           </div>
         </div>
+
+        {/* Bottom: Capabilities Layer */}
+        <div className="about-capabilities font-data text-xs md:text-sm uppercase tracking-[0.15em] text-brand-black/70 flex flex-wrap items-center gap-4 md:gap-6 pt-12 border-t border-brand-black/10">
+          <span>Design</span>
+          <span className="text-brand-black/30">/</span>
+          <span>Development</span>
+          <span className="text-brand-black/30">/</span>
+          <span>Branding</span>
+          <span className="text-brand-black/30">/</span>
+          <span>Systems</span>
+        </div>
+
       </div>
     </section>
   );

@@ -70,17 +70,6 @@ export default function Protocol() {
     const cards = gsap.utils.toArray('.stack-card') as HTMLElement[];
 
     cards.forEach((card, i) => {
-      // Inward content movement for a nice effect
-      gsap.from(card.querySelector('.card-content'), {
-        y: 100,
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 50%',
-          end: 'top 30%',
-          scrub: true,
-        }
-      });
-
       if (i < cards.length - 1) {
         gsap.to(card, {
           scale: 0.8,
@@ -96,10 +85,10 @@ export default function Protocol() {
   }, { scope: containerRef });
 
   return (
-    <section id="protocol" ref={containerRef} className="relative w-full pb-32">
+    <section id="protocol" ref={containerRef} className="relative w-full pb-12">
       <div className="absolute top-0 left-0 w-full h-[50vh] bg-brand-black to-brand-white z-[-1]" />
 
-      <div className="w-full max-w-7xl mx-auto px-6 mt-16 pb-16">
+      <div className="w-full max-w-7xl mx-auto px-6 pt-16 pb-16">
         <h2 className="font-heading font-medium text-4xl md:text-5xl text-brand-white/90 flex flex-col gap-2">
           <span>Methodology</span>
           <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">& Execution.</span>

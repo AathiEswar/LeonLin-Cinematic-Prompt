@@ -34,6 +34,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <span className="font-data text-xs uppercase tracking-widest text-brand-white/30 mb-2">Navigation</span>
             <a href="#features" className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">Digital Systems</a>
+            <a href="#work" className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">Selected Work</a>
             <a href="#philosophy" className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">Philosophy</a>
             <a href="#protocol" className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">Methodology</a>
             <a href="#membership" className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">Membership</a>
