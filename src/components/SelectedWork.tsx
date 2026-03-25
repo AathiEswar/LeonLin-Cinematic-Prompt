@@ -2,37 +2,27 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import alpanatechImg from '../assets/alpanatech.png';
+import greenDecorsImg from '../assets/green-decors.png';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const projects = [
   {
     id: 1,
-    title: "Aura Aesthetics",
-    description: "E-Commerce Experience & Brand Identity",
+    title: "Alpana Tech",
+    description: "alpanatech.com",
     tag: "2026",
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+    image: alpanatechImg,
+    link: "https://alpanatech.com"
   },
   {
     id: 2,
-    title: "Lumina Studio",
-    description: "Digital Platform & Editorial Design",
-    tag: "2025",
-    image: "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?q=80&w=2000&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Onyx Protocol",
-    description: "Web3 Interface & Motion System",
-    tag: "2025",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop"
-  },
-  {
-    id: 4,
-    title: "Khora Architecture",
-    description: "Immersive 3D Space & Interactive Web",
-    tag: "2024",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop"
+    title: "Green Decors",
+    description: "green-decors.vercel.app",
+    tag: "2026",
+    image: greenDecorsImg,
+    link: "https://green-decors.vercel.app"
   }
 ];
 
@@ -72,7 +62,7 @@ export default function SelectedWork() {
     <section ref={containerRef} className="relative py-12 px-6 w-full bg-[#0D0D0D] text-brand-white">
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Header */}
-        <div className="flex flex-col gap-6 mb-32 max-w-3xl">
+        <div className="flex flex-col gap-6 mb-16 max-w-3xl">
           <span className="work-header-elem font-data text-xs uppercase tracking-[0.2em] text-brand-white/40">
             Selected Work
           </span>
@@ -88,6 +78,7 @@ export default function SelectedWork() {
             <div
               key={project.id}
               className={`work-card group cursor-pointer flex flex-col ${index % 2 === 1 ? 'md:mt-24' : ''}`}
+              onClick={() => window.open(project.link, '_blank')}
             >
               {/* Image Container with subtle hover scale */}
               <div className="w-full relative overflow-hidden rounded-2xl aspect-[4/5] bg-[#111] mb-8">
