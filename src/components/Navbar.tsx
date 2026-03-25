@@ -3,18 +3,13 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import content from '../data/content.json';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const menuLinks = [
-  { name: 'Studio', href: '#philosophy' },
-  { name: 'Digital Systems', href: '#features' },
-  { name: 'Selected Work', href: '#work' },
-  { name: 'Methodology', href: '#protocol' },
-  { name: 'Engagements', href: '#membership' },
-];
+const { brand, menuLinks, footer: menuFooter } = content.navbar;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -105,9 +100,9 @@ export default function Navbar() {
             : 'bg-transparent text-brand-white/80 border-transparent py-5'
         )}
       >
-        <div className="font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500 hover:text-white cursor-pointer">
-          Vantique
-        </div>
+        <a href="#hero" className="font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500 hover:text-white cursor-pointer">
+          {brand}
+        </a>
 
         {/* Right Area: Links & Hamburger */}
         <div className="flex items-center relative z-[60]">
@@ -175,16 +170,17 @@ export default function Navbar() {
         {/* Footer Info inside Menu */}
         <div className="absolute bottom-8 left-6 right-6 sm:left-12 sm:right-12 font-data text-[10px] sm:text-xs uppercase tracking-[0.1em] text-brand-white/40 flex flex-col gap-6 w-[calc(100%-3rem)] sm:w-[calc(100%-6rem)] max-w-6xl mx-auto">
           <div className="menu-footer-el flex flex-col gap-1">
-            <span className="opacity-50 tracking-[0.2em]">Contact</span>
-            <a href="mailto:hello@vantique.studio" className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">hello@vantique.studio</a>
+            <span className="opacity-50 tracking-[0.2em]">{menuFooter.contact.label}</span>
+            <a href={`mailto:${menuFooter.contact.email}`} className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">{menuFooter.contact.email}</a>
           </div>
-          <div className="menu-footer-el flex flex-col gap-1">
-            <span className="opacity-50 tracking-[0.2em]">Socials</span>
+          {/* <div className="menu-footer-el flex flex-col gap-1">
+            <span className="opacity-50 tracking-[0.2em]">{menuFooter.socials.label}</span>
             <div className="flex gap-6 pointer-events-auto">
-              <a href="#" className="hover:text-brand-white transition-colors">Awwwards</a>
-              <a href="#" className="hover:text-brand-white transition-colors">Twitter (X)</a>
+              {menuFooter.socials.links.map((link) => (
+                <a key={link.name} href={link.href} className="hover:text-brand-white transition-colors">{link.name}</a>
+              ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

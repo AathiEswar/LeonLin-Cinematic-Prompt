@@ -1,49 +1,19 @@
 import { Check } from 'lucide-react';
 import { cn } from './Navbar';
+import content from '../data/content.json';
 
-const plans = [
-  {
-    name: "Foundation",
-    price: "Custom",
-    period: "Quote",
-    description: "Essential architecture and responsive design systems.",
-    features: ["Clarity Consultation", "Wireframe Blueprints", "Standard Build"],
-    popular: false,
-    btnClass: "bg-brand-black text-brand-white hover:opacity-90",
-    cardClass: "bg-brand-white text-brand-black border border-brand-black/10 shadow-sm"
-  },
-  {
-    name: "Midnight Luxe",
-    price: "Custom",
-    period: "Quote",
-    description: "Timeless UI/UX with cinematic micro-interactions.",
-    features: ["Deep Strategy", "Bespoke Design System", "Fluid Motion", "Priority Assembly"],
-    popular: true,
-    btnClass: "bg-brand-white text-brand-black hover:opacity-90",
-    cardClass: "bg-brand-black text-brand-white transform scale-105 shadow-2xl relative z-10"
-  },
-  {
-    name: "Avant-Garde",
-    price: "Retainer",
-    period: "",
-    description: "Ongoing evolution for enduring digital dominance.",
-    features: ["Continuous Iteration", "Advanced Telemetry", "Dedicated Architect", "SLA Guarantee"],
-    popular: false,
-    btnClass: "bg-brand-black text-brand-white hover:opacity-90",
-    cardClass: "bg-brand-light text-brand-black border border-brand-black/10 shadow-sm"
-  }
-];
+const { heading, subtext, popularLabel, plans } = content.membership;
 
 export default function Membership() {
   return (
     <section id="membership" className="py-32 px-6 w-full max-w-7xl mx-auto">
       <div className="mb-20 text-center">
         <h2 className="font-heading font-medium text-4xl md:text-5xl text-brand-black flex items-center justify-center gap-2">
-          <span>Project</span>
-          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">Engagements.</span>
+          <span>{heading.line1}</span>
+          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">{heading.line2}</span>
         </h2>
         <p className="font-outfit text-brand-black/60 mt-4 max-w-md mx-auto">
-          Partner with our architects to craft interfaces that endure beyond trends.
+          {subtext}
         </p>
       </div>
 
@@ -58,7 +28,7 @@ export default function Membership() {
           >
             {p.popular && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gray text-brand-white font-data text-xs uppercase tracking-widest px-4 py-1.5 rounded-full z-20 shadow-md">
-                Refined Choice
+                {popularLabel}
               </div>
             )}
             

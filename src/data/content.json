@@ -1,0 +1,312 @@
+{
+  "navbar": {
+    "brand": "Vantique",
+    "menuLinks": [
+      {
+        "name": "Studio",
+        "href": "#philosophy"
+      },
+      {
+        "name": "Digital Systems",
+        "href": "#features"
+      },
+      {
+        "name": "Selected Work",
+        "href": "#work"
+      },
+      {
+        "name": "Methodology",
+        "href": "#protocol"
+      },
+      {
+        "name": "Engagements",
+        "href": "#membership"
+      }
+    ],
+    "footer": {
+      "contact": {
+        "label": "Contact",
+        "email": "hello@vantique.studio"
+      },
+      "socials": {
+        "label": "Socials",
+        "links": [
+          {
+            "name": "Awwwards",
+            "href": "#"
+          },
+          {
+            "name": "Twitter (X)",
+            "href": "#"
+          }
+        ]
+      }
+    }
+  },
+  "hero": {
+    "headline": [
+      "Timeless,",
+      "Intentional."
+    ],
+    "description": "A design-driven digital agency crafting interfaces that feel intuitive, consistent, and built to last.",
+    "backgroundImage": "/hero-bg.webp"
+  },
+  "features": {
+    "heading": {
+      "line1": "The Digital",
+      "line2": "Systems Archive."
+    },
+    "shufflerCard": {
+      "label": "Aesthetic Principles",
+      "cards": [
+        "Clarity",
+        "Restraint",
+        "Depth"
+      ]
+    },
+    "telemetryCard": {
+      "label": "Active Thread",
+      "statusLabel": "Live Build",
+      "messages": [
+        "Crafting Design Systems...",
+        "Refining Midnight Luxe Theme...",
+        "Building Intuitive Flow...",
+        "Executing Simplicity..."
+      ]
+    },
+    "regimenCard": {
+      "label": "Workflow Protocol",
+      "days": [
+        "S",
+        "M",
+        "T",
+        "W",
+        "T",
+        "F",
+        "S"
+      ],
+      "buttonText": "Start Project"
+    }
+  },
+  "selectedWork": {
+    "sectionLabel": "Selected Work",
+    "heading": {
+      "line1": "Statements of",
+      "line2": "taste & restraint."
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Alpana Tech",
+        "description": "alpanatech.com",
+        "tag": "2026",
+        "imageKey": "alpanaWork",
+        "link": "https://alpanatech.com"
+      },
+      {
+        "id": 2,
+        "title": "Green Decors",
+        "description": "green-decors.vercel.app",
+        "tag": "2026",
+        "imageKey": "greenWork",
+        "link": "https://green-decors.vercel.app"
+      },
+      {
+        "id": 3,
+        "title": "Avent X Headphones",
+        "description": "Sleek product landing page with strong storytelling",
+        "tag": "2026",
+        "imageKey": "alpanaWork",
+        "link": "https://avent-x-headphones.vercel.app/"
+      },
+      {
+        "id": 4,
+        "title": "Perfect Agency",
+        "description": "Structured, trust-focused layout for agencies",
+        "tag": "2026",
+        "imageKey": "greenWork",
+        "link": "https://perfect-agency-real-estate-and-fina.vercel.app/"
+      },
+      {
+        "id": 5,
+        "title": "Accounting Agency",
+        "description": "Clean and professional service-based website",
+        "tag": "2026",
+        "imageKey": "alpanaWork",
+        "link": "https://accounting-agency.vercel.app/"
+      },
+      {
+        "id": 6,
+        "title": "Google Stitch MCP",
+        "description": "Interactive landing page for modern tech tools",
+        "tag": "2026",
+        "imageKey": "greenWork",
+        "link": "https://aathieswar.github.io/GoogleStitch-MCP/"
+      },
+      {
+        "id": 7,
+        "title": "Good Fellas Agency",
+        "description": "Premium, visually rich agency experience",
+        "tag": "2026",
+        "imageKey": "alpanaWork",
+        "link": "https://gs-good-fellas.vercel.app/"
+      }
+    ]
+  },
+  "philosophy": {
+    "sectionLabel": "Studio",
+    "heading": "We design and build digital experiences that feel as good as they look.",
+    "subtext": "We focus on clarity, motion, and structure — crafting interfaces that are not just visually refined, but functionally precise.",
+    "capabilities": [
+      "Design",
+      "Development",
+      "Branding",
+      "Systems"
+    ]
+  },
+  "protocol": {
+    "heading": {
+      "line1": "Methodology",
+      "line2": "& Execution."
+    },
+    "phases": [
+      {
+        "title": "1. Core Clarity",
+        "subtitle": "Distilling complex requirements into focused, intuitive design systems.",
+        "visualKey": "HelixGear",
+        "color": "bg-brand-white text-brand-black border border-brand-black/5"
+      },
+      {
+        "title": "2. Absolute Restraint",
+        "subtitle": "Stripping away noise. Building digital interfaces that endure beyond trends.",
+        "visualKey": "LaserGrid",
+        "color": "bg-brand-light text-brand-black"
+      },
+      {
+        "title": "3. Lasting Depth",
+        "subtitle": "Fluid state management ensuring experiences remain relevant over time.",
+        "visualKey": "Waveform",
+        "color": "bg-[#EDEDED] text-brand-black"
+      }
+    ]
+  },
+  "membership": {
+    "heading": {
+      "line1": "Project",
+      "line2": "Engagements."
+    },
+    "subtext": "Partner with our architects to craft interfaces that endure beyond trends.",
+    "popularLabel": "Refined Choice",
+    "plans": [
+      {
+        "name": "Foundation",
+        "price": "Custom",
+        "period": "Quote",
+        "description": "Essential architecture and responsive design systems.",
+        "features": [
+          "Clarity Consultation",
+          "Wireframe Blueprints",
+          "Standard Build"
+        ],
+        "popular": false,
+        "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
+        "cardClass": "bg-brand-white text-brand-black border border-brand-black/10 shadow-sm"
+      },
+      {
+        "name": "Midnight Luxe",
+        "price": "Custom",
+        "period": "Quote",
+        "description": "Timeless UI/UX with cinematic micro-interactions.",
+        "features": [
+          "Deep Strategy",
+          "Bespoke Design System",
+          "Fluid Motion",
+          "Priority Assembly"
+        ],
+        "popular": true,
+        "btnClass": "bg-brand-white text-brand-black hover:opacity-90",
+        "cardClass": "bg-brand-black text-brand-white transform scale-105 shadow-2xl relative z-10"
+      },
+      {
+        "name": "Avant-Garde",
+        "price": "Retainer",
+        "period": "",
+        "description": "Ongoing evolution for enduring digital dominance.",
+        "features": [
+          "Continuous Iteration",
+          "Advanced Telemetry",
+          "Dedicated Architect",
+          "SLA Guarantee"
+        ],
+        "popular": false,
+        "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
+        "cardClass": "bg-brand-light text-brand-black border border-brand-black/10 shadow-sm"
+      }
+    ]
+  },
+  "footer": {
+    "availability": {
+      "label": "Available for Work",
+      "heading": {
+        "line1": "Have an idea?",
+        "line2": "Let's build it."
+      },
+      "email": "hello@vantique.studio"
+    },
+    "navigation": {
+      "label": "Navigation",
+      "links": [
+        {
+          "name": "Digital Systems",
+          "href": "#features"
+        },
+        {
+          "name": "Selected Work",
+          "href": "#work"
+        },
+        {
+          "name": "Philosophy",
+          "href": "#philosophy"
+        },
+        {
+          "name": "Methodology",
+          "href": "#protocol"
+        },
+        {
+          "name": "Membership",
+          "href": "#membership"
+        }
+      ]
+    },
+    "socials": {
+      "label": "Socials",
+      "links": [
+        {
+          "name": "Awwwards",
+          "href": "#"
+        },
+        {
+          "name": "Twitter (X)",
+          "href": "#"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "#"
+        },
+        {
+          "name": "Instagram",
+          "href": "#"
+        }
+      ]
+    },
+    "bottom": {
+      "copyright": "Vantique Studio.",
+      "tagline": "Built on Clarity, Restraint, and Depth.",
+      "backToTop": "Back to Top",
+      "brandName": [
+        "Vantique",
+        "Studio"
+      ]
+    }
+  }
+}

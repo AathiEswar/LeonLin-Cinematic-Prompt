@@ -2,8 +2,11 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const { sectionLabel, heading, subtext, capabilities } = content.philosophy;
 
 export default function Philosophy() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,29 +59,28 @@ export default function Philosophy() {
 
           {/* Left: Primary Statement */}
           <div className="lg:w-[55%] flex flex-col gap-6">
-            <span className="about-heading font-data text-xs uppercase tracking-[0.2em] text-brand-black/60">Studio</span>
+            <span className="about-heading font-data text-xs uppercase tracking-[0.2em] text-brand-black/60">{sectionLabel}</span>
             <h2 className="about-heading font-heading font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.15] text-brand-black">
-              We design and build digital experiences that feel as good as they look.
+              {heading}
             </h2>
           </div>
 
           {/* Right: Supporting Content */}
           <div className="lg:w-[40%] flex flex-col lg:pb-3">
             <p className="about-subtext font-outfit text-lg md:text-xl text-brand-black/80 leading-relaxed font-normal max-w-sm md:max-w-md">
-              We focus on clarity, motion, and structure — crafting interfaces that are not just visually refined, but functionally precise.
+              {subtext}
             </p>
           </div>
         </div>
 
         {/* Bottom: Capabilities Layer */}
         <div className="about-capabilities font-data text-xs md:text-sm uppercase tracking-[0.15em] text-brand-black/70 flex flex-wrap items-center gap-4 md:gap-6 pt-12 border-t border-brand-black/10">
-          <span>Design</span>
-          <span className="text-brand-black/30">/</span>
-          <span>Development</span>
-          <span className="text-brand-black/30">/</span>
-          <span>Branding</span>
-          <span className="text-brand-black/30">/</span>
-          <span>Systems</span>
+          {capabilities.map((cap, i) => (
+            <span key={cap}>
+              {i > 0 && <span className="text-brand-black/30 mr-4 md:mr-6">/</span>}
+              {cap}
+            </span>
+          ))}
         </div>
 
       </div>

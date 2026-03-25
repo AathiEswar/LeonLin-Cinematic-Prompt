@@ -4,11 +4,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MousePointer2 } from 'lucide-react';
 import { cn } from './Navbar';
+import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const { heading, shufflerCard: shufflerData, telemetryCard: telemetryData, regimenCard: regimenData } = content.features;
+
 function ShufflerCard() {
-  const [cards, setCards] = useState(["Clarity", "Restraint", "Depth"]);
+  const [cards, setCards] = useState(shufflerData.cards);
   useEffect(() => {
     const interval = setInterval(() => {
       setCards(prev => {
@@ -23,7 +26,7 @@ function ShufflerCard() {
 
   return (
     <div className="relative w-full h-[350px] flex items-center justify-center bg-[#111] rounded-[3rem] overflow-hidden p-8 border border-white/5">
-      <div className="absolute top-6 left-6 font-data text-xs text-brand-white/40 uppercase tracking-widest">Aesthetic Principles</div>
+      <div className="absolute top-6 left-6 font-data text-xs text-brand-white/40 uppercase tracking-widest">{shufflerData.label}</div>
       <div className="relative w-full max-w-[220px] h-[180px]">
         {cards.map((lbl, idx) => {
           const yOffset = idx * 20;
@@ -53,7 +56,7 @@ function ShufflerCard() {
 }
 
 function TelemetryCard() {
-  const messages = ["Crafting Design Systems...", "Refining Midnight Luxe Theme...", "Building Intuitive Flow...", "Executing Simplicity..."];
+  const messages = telemetryData.messages;
   const [msgIdx, setMsgIdx] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -90,9 +93,9 @@ function TelemetryCard() {
   return (
     <div className="relative w-full h-[350px] flex flex-col justify-between bg-brand-black rounded-[3rem] overflow-hidden p-8 text-brand-white border border-brand-white/5">
       <div className="flex items-center justify-between w-full">
-        <div className="font-data text-xs text-brand-white/40 uppercase tracking-widest">Active Thread</div>
+        <div className="font-data text-xs text-brand-white/40 uppercase tracking-widest">{telemetryData.label}</div>
         <div className="flex items-center gap-2">
-          <span className="font-data text-[10px] text-brand-white/60">Live Build</span>
+          <span className="font-data text-[10px] text-brand-white/60">{telemetryData.statusLabel}</span>
           <div className="w-2 h-2 rounded-full bg-brand-gray animate-pulse" />
         </div>
       </div>
@@ -154,15 +157,13 @@ function RegimenCard() {
       
   }, { scope: container });
 
-  const days = ['S','M','T','W','T','F','S'];
-
   return (
     <div ref={container} className="relative w-full h-[350px] flex flex-col items-center justify-center bg-brand-white rounded-[3rem] overflow-hidden p-8 border border-brand-black/10">
-      <div className="absolute top-6 left-6 font-data text-xs text-brand-black/40 uppercase tracking-widest">Workflow Protocol</div>
+      <div className="absolute top-6 left-6 font-data text-xs text-brand-black/40 uppercase tracking-widest">{regimenData.label}</div>
       
       <div className="relative w-full max-w-[240px] mt-4 z-10">
         <div className="flex justify-between mb-8">
-          {days.map((d, i) => (
+          {regimenData.days.map((d, i) => (
             <div 
               key={i} 
               className={cn(
@@ -177,7 +178,7 @@ function RegimenCard() {
         
         <div className="flex justify-end">
           <button ref={saveRef} className="px-5 py-2.5 rounded-full bg-[#171717] text-brand-white font-outfit text-sm font-semibold shadow-xl border border-white/5 transition-transform">
-            Start Project
+            {regimenData.buttonText}
           </button>
         </div>
         
@@ -214,8 +215,8 @@ export default function Features() {
     <section id="features" ref={containerRef} className="py-32 px-6 w-full max-w-7xl mx-auto bg-brand-light/20">
       <div className="mb-16">
         <h2 className="font-heading font-medium text-4xl md:text-5xl text-brand-black flex flex-col gap-2">
-          <span>The Digital</span>
-          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">Systems Archive.</span>
+          <span>{heading.line1}</span>
+          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">{heading.line2}</span>
         </h2>
       </div>
       

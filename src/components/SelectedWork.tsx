@@ -2,29 +2,23 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import alpanatechImg from '../assets/alpanatech.png';
-import greenDecorsImg from '../assets/green-decors.png';
+import alpanaWorkImg from '../assets/alpana-work.webp';
+import greenWorkImg from '../assets/green-work.webp';
+import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const projects = [
-  {
-    id: 1,
-    title: "Alpana Tech",
-    description: "alpanatech.com",
-    tag: "2026",
-    image: alpanatechImg,
-    link: "https://alpanatech.com"
-  },
-  {
-    id: 2,
-    title: "Green Decors",
-    description: "green-decors.vercel.app",
-    tag: "2026",
-    image: greenDecorsImg,
-    link: "https://green-decors.vercel.app"
-  }
-];
+const imageMap: Record<string, string> = {
+  alpanaWork: alpanaWorkImg,
+  greenWork: greenWorkImg,
+};
+
+const { sectionLabel, heading, projects: projectData } = content.selectedWork;
+
+const projects = projectData.map((p) => ({
+  ...p,
+  image: imageMap[p.imageKey] || '',
+}));
 
 export default function SelectedWork() {
   const containerRef = useRef<HTMLElement>(null);
@@ -64,11 +58,11 @@ export default function SelectedWork() {
         {/* Header */}
         <div className="flex flex-col gap-6 mb-16 max-w-3xl">
           <span className="work-header-elem font-data text-xs uppercase tracking-[0.2em] text-brand-white/40">
-            Selected Work
+            {sectionLabel}
           </span>
           <h2 className="work-header-elem font-heading font-medium text-5xl md:text-7xl tracking-tight leading-[1.1]">
-            Statements of <br />
-            <span className="text-brand-white/50">taste & restraint.</span>
+            {heading.line1} <br />
+            <span className="text-brand-white/50">{heading.line2}</span>
           </h2>
         </div>
 
