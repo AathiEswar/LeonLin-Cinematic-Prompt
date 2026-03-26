@@ -4,6 +4,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import alpanaWorkImg from '../assets/alpana-work.webp';
 import greenWorkImg from '../assets/green-work.webp';
+import aventxWorkImg from '../assets/aventx-work.webp';
+import perfectAgencyWorkImg from '../assets/perfect-agency-work.webp';
+import accountancyWorkImg from '../assets/accountancy-work.webp';
+import goodFellasWorkImg from '../assets/good-fellas-work.webp';
 import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -11,6 +15,10 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const imageMap: Record<string, string> = {
   alpanaWork: alpanaWorkImg,
   greenWork: greenWorkImg,
+  aventxWork: aventxWorkImg,
+  perfectAgencyWork: perfectAgencyWorkImg,
+  accountancyWork: accountancyWorkImg,
+  goodFellasWork: goodFellasWorkImg,
 };
 
 const { sectionLabel, heading, projects: projectData } = content.selectedWork;

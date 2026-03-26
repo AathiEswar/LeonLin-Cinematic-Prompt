@@ -3,60 +3,27 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MousePointer2 } from 'lucide-react';
-import { cn } from './Navbar';
+
 import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const { heading, shufflerCard: shufflerData, telemetryCard: telemetryData, regimenCard: regimenData } = content.features;
+const { heading, webDesign, development, branding } = content.features as any;
 
-function ShufflerCard() {
-  const [cards, setCards] = useState(shufflerData.cards);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCards(prev => {
-        const copy = [...prev];
-        const last = copy.pop()!;
-        copy.unshift(last);
-        return copy;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
+function DarkServiceCard() {
   return (
-    <div className="relative w-full h-[350px] flex items-center justify-center bg-[#111] rounded-[3rem] overflow-hidden p-8 border border-white/5">
-      <div className="absolute top-6 left-6 font-data text-xs text-brand-white/40 uppercase tracking-widest">{shufflerData.label}</div>
-      <div className="relative w-full max-w-[220px] h-[180px]">
-        {cards.map((lbl, idx) => {
-          const yOffset = idx * 20;
-          const scale = 1 - (idx * 0.08);
-          const opacity = 1 - (idx * 0.3);
-          const zIndex = 10 - idx;
-          
-          return (
-             <div 
-               key={lbl}
-               className="absolute top-0 left-0 w-full bg-brand-white text-brand-black p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-brand-black/5"
-               style={{
-                 transform: `translateY(${yOffset}px) scale(${scale})`,
-                 opacity,
-                 zIndex,
-                 transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)'
-               }}
-             >
-                <div className="font-data tracking-tight text-[10px] mb-3 opacity-60">Pillar {cards.length - idx}</div>
-                <div className="font-heading font-semibold text-base leading-snug">{lbl}</div>
-             </div>
-          );
-        })}
+    <div className="relative w-full h-[350px] flex flex-col justify-end bg-[#111] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-white/5 group">
+      <div className="absolute top-6 left-6 font-data text-xs text-brand-white/40 uppercase tracking-widest">{webDesign.label}</div>
+      <div className="flex flex-col gap-4 relative z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-2">
+        <h3 className="font-heading font-medium text-5xl leading-tight">{webDesign.title}</h3>
+        <p className="font-outfit text-base text-brand-white/60 leading-relaxed max-w-[90%]">{webDesign.description}</p>
       </div>
     </div>
   );
 }
 
-function TelemetryCard() {
-  const messages = telemetryData.messages;
+function TerminalServiceCard() {
+  const messages = development.messages;
   const [msgIdx, setMsgIdx] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -83,7 +50,7 @@ function TelemetryCard() {
       } else {
         timeout = setTimeout(() => {
           setDisplayedText(currentMsg.substring(0, displayedText.length + 1));
-        }, 100);
+        }, 80);
       }
     }
 
@@ -91,25 +58,25 @@ function TelemetryCard() {
   }, [displayedText, isDeleting, msgIdx, messages]);
 
   return (
-    <div className="relative w-full h-[350px] flex flex-col justify-between bg-brand-black rounded-[3rem] overflow-hidden p-8 text-brand-white border border-brand-white/5">
+    <div className="relative w-full h-[350px] flex flex-col justify-between bg-[#0A0A0A] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-brand-white/5">
       <div className="flex items-center justify-between w-full">
-        <div className="font-data text-xs text-brand-white/40 uppercase tracking-widest">{telemetryData.label}</div>
+        <div className="font-data text-xs text-brand-white/40 uppercase tracking-widest">{development.label}</div>
         <div className="flex items-center gap-2">
-          <span className="font-data text-[10px] text-brand-white/60">{telemetryData.statusLabel}</span>
+          <span className="font-data text-[10px] text-brand-white/60">{development.statusLabel}</span>
           <div className="w-2 h-2 rounded-full bg-brand-gray animate-pulse" />
         </div>
       </div>
       
-      <div className="font-data text-lg leading-relaxed text-brand-white/90">
-        <span className="text-brand-gray mr-2">~</span>
+      <div className="font-data text-xl leading-relaxed text-brand-white/90">
+        <span className="text-brand-gray mr-3">~</span>
         {displayedText}
-        <span className="inline-block w-2.5 h-5 ml-1 bg-brand-white align-middle animate-pulse" />
+        <span className="inline-block w-3 h-6 ml-1 bg-brand-white align-middle animate-pulse" />
       </div>
     </div>
   );
 }
 
-function RegimenCard() {
+function LightServiceCard() {
   const container = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const saveRef = useRef<HTMLButtonElement>(null);
@@ -117,38 +84,22 @@ function RegimenCard() {
   useGSAP(() => {
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
     
-    tl.set(cursorRef.current, { x: 0, y: 150, opacity: 0, scale: 1 });
-    tl.set(".day-btn", { scale: 1, backgroundColor: 'transparent', color: '#000000' });
+    tl.set(cursorRef.current, { x: 30, y: 180, opacity: 0, scale: 1 });
     tl.set(saveRef.current, { scale: 1 });
 
     tl.to(cursorRef.current, { opacity: 1, duration: 0.3 })
       .to(cursorRef.current, {
-        x: 100,
-        y: 40,
-        duration: 1,
+        x: 125,
+        y: 118,
+        duration: 0.9,
         ease: 'power2.inOut'
       })
       .to(cursorRef.current, { scale: 0.8, duration: 0.1 })
-      .to(".day-btn-W", { 
-        backgroundColor: '#0A0A0A', 
-        color: '#FFFFFF', 
-        scale: 0.95,
-        duration: 0.1 
-      }, "<")
+      .to(saveRef.current, { scale: 0.95, border: '1px solid rgba(0,0,0,0.1)', duration: 0.1 }, "<")
       .to(cursorRef.current, { scale: 1, duration: 0.1 })
-      .to(".day-btn-W", { scale: 1, duration: 0.1 }, "<")
+      .to(saveRef.current, { scale: 1, border: '1px solid rgba(0,0,0,0)', duration: 0.1 }, "<")
       .to(cursorRef.current, {
-        x: 130,
-        y: 110,
-        duration: 0.8,
-        ease: 'power2.inOut'
-      })
-      .to(cursorRef.current, { scale: 0.8, duration: 0.1 })
-      .to(saveRef.current, { scale: 0.95, duration: 0.1 }, "<")
-      .to(cursorRef.current, { scale: 1, duration: 0.1 })
-      .to(saveRef.current, { scale: 1, duration: 0.1 }, "<")
-      .to(cursorRef.current, {
-        x: 250,
+        x: 230,
         y: 200,
         opacity: 0,
         duration: 0.6,
@@ -158,36 +109,22 @@ function RegimenCard() {
   }, { scope: container });
 
   return (
-    <div ref={container} className="relative w-full h-[350px] flex flex-col items-center justify-center bg-brand-white rounded-[3rem] overflow-hidden p-8 border border-brand-black/10">
-      <div className="absolute top-6 left-6 font-data text-xs text-brand-black/40 uppercase tracking-widest">{regimenData.label}</div>
+    <div ref={container} className="relative w-full h-[350px] flex flex-col justify-between items-center bg-brand-white rounded-[3rem] overflow-hidden p-8 border border-brand-black/10">
+      <div className="absolute top-6 left-6 w-full text-left font-data text-xs text-brand-black/40 uppercase tracking-widest">{branding.label}</div>
       
-      <div className="relative w-full max-w-[240px] mt-4 z-10">
-        <div className="flex justify-between mb-8">
-          {regimenData.days.map((d, i) => (
-            <div 
-              key={i} 
-              className={cn(
-                "w-7 h-7 rounded-full flex items-center justify-center font-outfit text-xs font-semibold border border-brand-black/10 day-btn text-brand-black",
-                d === 'W' && "day-btn-W"
-              )}
-            >
-              {d}
-            </div>
-          ))}
-        </div>
+      <div className="relative w-full max-w-[260px] flex flex-col items-center gap-10 mt-16 z-10">
+        <h3 className="font-heading font-medium text-[2.5rem] tracking-tight text-brand-black text-center">{branding.title}</h3>
         
-        <div className="flex justify-end">
-          <button ref={saveRef} className="px-5 py-2.5 rounded-full bg-[#171717] text-brand-white font-outfit text-sm font-semibold shadow-xl border border-white/5 transition-transform">
-            {regimenData.buttonText}
-          </button>
-        </div>
+        <button ref={saveRef} className="px-6 py-3 rounded-full bg-[#171717] text-brand-white font-outfit text-sm font-semibold shadow-2xl transition-transform">
+          {branding.buttonText}
+        </button>
         
         <div 
           ref={cursorRef}
-          className="absolute top-0 left-0 w-8 h-8 pointer-events-none drop-shadow-xl z-20 text-brand-black"
+          className="absolute top-0 left-0 w-8 h-8 pointer-events-none drop-shadow-2xl z-20 text-brand-black"
           style={{ transform: 'translate(0px, 150px)', opacity: 0 }}
         >
-          <MousePointer2 size={24} fill="#000000" />
+          <MousePointer2 size={26} fill="#000000" />
         </div>
       </div>
     </div>
@@ -203,32 +140,32 @@ export default function Features() {
         trigger: containerRef.current,
         start: 'top 75%',
       },
-      y: 60,
+      y: 80,
       opacity: 0,
-      duration: 1,
+      duration: 1.2,
       stagger: 0.2,
       ease: 'power3.out'
     });
   }, { scope: containerRef });
 
   return (
-    <section id="features" ref={containerRef} className="py-32 px-6 w-full max-w-7xl mx-auto bg-brand-light/20">
-      <div className="mb-16">
-        <h2 className="font-heading font-medium text-4xl md:text-5xl text-brand-black flex flex-col gap-2">
+    <section id="features" ref={containerRef} className="py-32 px-6 w-full max-w-7xl mx-auto bg-brand-light/20 shadow-[0_-20px_40px_rgba(0,0,0,0.02)]">
+      <div className="mb-20">
+        <h2 className="font-heading font-medium text-5xl md:text-7xl text-brand-black flex flex-col gap-2 tracking-tight">
           <span>{heading.line1}</span>
-          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">{heading.line2}</span>
+          <span className="font-drama italic text-brand-gray text-6xl md:text-8xl">{heading.line2}</span>
         </h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="feature-card">
-          <ShufflerCard />
+          <DarkServiceCard />
         </div>
-        <div className="feature-card relative top-0 md:top-12">
-          <TelemetryCard />
+        <div className="feature-card relative top-0 md:top-16">
+          <TerminalServiceCard />
         </div>
-        <div className="feature-card relative top-0 md:top-24">
-          <RegimenCard />
+        <div className="feature-card relative top-0 md:top-32">
+          <LightServiceCard />
         </div>
       </div>
     </section>

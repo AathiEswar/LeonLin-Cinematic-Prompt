@@ -53,38 +53,26 @@
   },
   "features": {
     "heading": {
-      "line1": "The Digital",
-      "line2": "Systems Archive."
+      "line1": "What",
+      "line2": "we do."
     },
-    "shufflerCard": {
-      "label": "Aesthetic Principles",
-      "cards": [
-        "Clarity",
-        "Restraint",
-        "Depth"
-      ]
+    "webDesign": {
+      "label": "Core Service",
+      "title": "Web Design",
+      "description": "Crafting digital experiences that look as good as they feel."
     },
-    "telemetryCard": {
+    "development": {
       "label": "Active Thread",
       "statusLabel": "Live Build",
       "messages": [
-        "Crafting Design Systems...",
-        "Refining Midnight Luxe Theme...",
-        "Building Intuitive Flow...",
-        "Executing Simplicity..."
+        "Development & Launch",
+        "Executing build...",
+        "Deploying to edge..."
       ]
     },
-    "regimenCard": {
-      "label": "Workflow Protocol",
-      "days": [
-        "S",
-        "M",
-        "T",
-        "W",
-        "T",
-        "F",
-        "S"
-      ],
+    "branding": {
+      "label": "Identity",
+      "title": "Brand Systems",
       "buttonText": "Start Project"
     }
   },
@@ -116,7 +104,7 @@
         "title": "Avent X Headphones",
         "description": "Sleek product landing page with strong storytelling",
         "tag": "2026",
-        "imageKey": "alpanaWork",
+        "imageKey": "aventxWork",
         "link": "https://avent-x-headphones.vercel.app/"
       },
       {
@@ -124,7 +112,7 @@
         "title": "Perfect Agency",
         "description": "Structured, trust-focused layout for agencies",
         "tag": "2026",
-        "imageKey": "greenWork",
+        "imageKey": "perfectAgencyWork",
         "link": "https://perfect-agency-real-estate-and-fina.vercel.app/"
       },
       {
@@ -132,7 +120,7 @@
         "title": "Accounting Agency",
         "description": "Clean and professional service-based website",
         "tag": "2026",
-        "imageKey": "alpanaWork",
+        "imageKey": "accountancyWork",
         "link": "https://accounting-agency.vercel.app/"
       },
       {
@@ -148,7 +136,7 @@
         "title": "Good Fellas Agency",
         "description": "Premium, visually rich agency experience",
         "tag": "2026",
-        "imageKey": "alpanaWork",
+        "imageKey": "goodFellasWork",
         "link": "https://gs-good-fellas.vercel.app/"
       }
     ]
