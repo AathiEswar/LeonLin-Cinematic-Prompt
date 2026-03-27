@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import content from '../data/content.json';
 
-const { availability, navigation, socials, bottom } = content.footer;
+const { availability, navigation, bottom } = content.footer;
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -30,10 +30,16 @@ export default function Footer() {
             {availability.heading.line1}<br />
             <span className="text-brand-white/40">{availability.heading.line2}</span>
           </h2>
-          <a href={`mailto:${availability.email}`} className="inline-flex items-center gap-2 mt-6 rounded-full border border-brand-white/20 px-8 py-4 text-sm font-data hover:bg-brand-white hover:text-brand-black transition-all duration-300 w-fit group">
-            {availability.email}
-            <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
-          </a>
+          <div className="flex flex-col gap-4 mt-6">
+            <a href={`mailto:${availability.email}`} className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-data bg-brand-white text-brand-black transition-all duration-300 w-fit group">
+              {availability.email}
+              <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            </a>
+            <a href={`https://wa.me/918072135754`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-data bg-brand-white text-brand-black transition-all duration-300 w-fit group">
+              {availability.phone}
+              <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
 
         {/* Right: Links */}

@@ -7,12 +7,12 @@
         "href": "#philosophy"
       },
       {
-        "name": "Digital Systems",
-        "href": "#features"
-      },
-      {
         "name": "Selected Work",
         "href": "#work"
+      },
+      {
+        "name": "Digital Systems",
+        "href": "#features"
       },
       {
         "name": "Methodology",
@@ -21,12 +21,17 @@
       {
         "name": "Engagements",
         "href": "#membership"
+      },
+      {
+        "name": "Contact",
+        "href": "#footer"
       }
     ],
     "footer": {
       "contact": {
         "label": "Contact",
-        "email": "hello@vantique.studio"
+        "email": "aathi28082003@gmail.com",
+        "phone": "+91 80721 35754"
       },
       "socials": {
         "label": "Socials",
@@ -48,39 +53,39 @@
       "Timeless,",
       "Intentional."
     ],
-    "description": "A design-driven digital agency crafting interfaces that feel intuitive, consistent, and built to last.",
+    "description": "We build visually stunning websites that tell your brand's story and turn visitors into customers.",
     "backgroundImage": "/hero-bg.webp"
   },
   "features": {
     "heading": {
       "line1": "What",
-      "line2": "we do."
+      "line2": "we craft."
     },
     "webDesign": {
-      "label": "Core Service",
-      "title": "Web Design",
-      "description": "Crafting digital experiences that look as good as they feel."
+      "label": "Visual Storytelling",
+      "title": "Stunning Design",
+      "description": "Every pixel tells a story. We design websites that captivate at first glance and hold attention."
     },
     "development": {
-      "label": "Active Thread",
+      "label": "Conversion Engine",
       "statusLabel": "Live Build",
       "messages": [
-        "Development & Launch",
-        "Executing build...",
-        "Deploying to edge..."
+        "Optimizing conversion funnels...",
+        "Building narrative flow...",
+        "Deploying storytelling UI..."
       ]
     },
     "branding": {
-      "label": "Identity",
-      "title": "Brand Systems",
+      "label": "Brand Narrative",
+      "title": "Story-First Identity",
       "buttonText": "Start Project"
     }
   },
   "selectedWork": {
-    "sectionLabel": "Selected Work",
+    "sectionLabel": "Works & Templates",
     "heading": {
-      "line1": "Statements of",
-      "line2": "taste & restraint."
+      "line1": "Selected works",
+      "line2": "& premium templates."
     },
     "projects": [
       {
@@ -125,54 +130,46 @@
       },
       {
         "id": 6,
-        "title": "Google Stitch MCP",
-        "description": "Interactive landing page for modern tech tools",
-        "tag": "2026",
-        "imageKey": "greenWork",
-        "link": "https://aathieswar.github.io/GoogleStitch-MCP/"
-      },
-      {
-        "id": 7,
         "title": "Good Fellas Agency",
-        "description": "Premium, visually rich agency experience",
+        "de6cription": "Premium, visually rich agency experience",
         "tag": "2026",
         "imageKey": "goodFellasWork",
-        "link": "https://gs-good-fellas.vercel.app/"
+        "link": "https://aathieswar.github.io/GoogleStitch-MCP/"
       }
     ]
   },
   "philosophy": {
     "sectionLabel": "Studio",
-    "heading": "We design and build digital experiences that feel as good as they look.",
-    "subtext": "We focus on clarity, motion, and structure — crafting interfaces that are not just visually refined, but functionally precise.",
+    "heading": "Websites that look extraordinary, narrate your vision, and drive real results.",
+    "subtext": "We merge cinematic aesthetics with strategic storytelling — every section is designed to engage, every interaction engineered to convert.",
     "capabilities": [
-      "Design",
-      "Development",
-      "Branding",
-      "Systems"
+      "Visual Design",
+      "Brand Storytelling",
+      "Conversion Strategy",
+      "Web Development"
     ]
   },
   "protocol": {
     "heading": {
-      "line1": "Methodology",
-      "line2": "& Execution."
+      "line1": "How we",
+      "line2": "bring it to life."
     },
     "phases": [
       {
-        "title": "1. Core Clarity",
-        "subtitle": "Distilling complex requirements into focused, intuitive design systems.",
+        "title": "Discover Your Story",
+        "subtitle": "We dive deep into your brand, audience, and goals to uncover the narrative your website needs to tell.",
         "visualKey": "HelixGear",
         "color": "bg-brand-white text-brand-black border border-brand-black/5"
       },
       {
-        "title": "2. Absolute Restraint",
-        "subtitle": "Stripping away noise. Building digital interfaces that endure beyond trends.",
+        "title": "Design to Captivate",
+        "subtitle": "We craft visually striking layouts and cinematic interactions that make your brand impossible to ignore.",
         "visualKey": "LaserGrid",
         "color": "bg-brand-light text-brand-black"
       },
       {
-        "title": "3. Lasting Depth",
-        "subtitle": "Fluid state management ensuring experiences remain relevant over time.",
+        "title": "Build to Convert",
+        "subtitle": "Every element is engineered for performance — fast load times, seamless flows, and clear calls-to-action that drive results.",
         "visualKey": "Waveform",
         "color": "bg-[#EDEDED] text-brand-black"
       }
@@ -180,51 +177,52 @@
   },
   "membership": {
     "heading": {
-      "line1": "Project",
-      "line2": "Engagements."
+      "line1": "Invest in",
+      "line2": "your digital story."
     },
-    "subtext": "Partner with our architects to craft interfaces that endure beyond trends.",
-    "popularLabel": "Refined Choice",
+    "subtext": "Choose the engagement that fits your vision. Every plan delivers beauty, narrative, and results.",
+    "popularLabel": "Most Popular",
     "plans": [
       {
-        "name": "Foundation",
+        "name": "Starter",
         "price": "Custom",
         "period": "Quote",
-        "description": "Essential architecture and responsive design systems.",
+        "description": "A visually polished single-page website that tells your story clearly and converts from day one.",
         "features": [
-          "Clarity Consultation",
-          "Wireframe Blueprints",
-          "Standard Build"
+          "Stunning Visual Design",
+          "Story-Driven Layout",
+          "Conversion-Optimized CTA",
+          "Mobile-First & Responsive"
         ],
         "popular": false,
         "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
         "cardClass": "bg-brand-white text-brand-black border border-brand-black/10 shadow-sm"
       },
       {
-        "name": "Midnight Luxe",
+        "name": "Growth",
         "price": "Custom",
         "period": "Quote",
-        "description": "Timeless UI/UX with cinematic micro-interactions.",
+        "description": "A multi-page narrative experience with cinematic interactions that guide visitors toward action.",
         "features": [
-          "Deep Strategy",
-          "Bespoke Design System",
-          "Fluid Motion",
-          "Priority Assembly"
+          "Multi-Page Storytelling",
+          "Cinematic Micro-Animations",
+          "Strategic User Journeys",
+          "SEO & Performance Tuned"
         ],
         "popular": true,
         "btnClass": "bg-brand-white text-brand-black hover:opacity-90",
         "cardClass": "bg-brand-black text-brand-white transform scale-105 shadow-2xl relative z-10"
       },
       {
-        "name": "Avant-Garde",
+        "name": "Premium",
         "price": "Retainer",
         "period": "",
-        "description": "Ongoing evolution for enduring digital dominance.",
+        "description": "A bespoke digital masterpiece — your brand's full story, designed to captivate and engineered to convert.",
         "features": [
-          "Continuous Iteration",
-          "Advanced Telemetry",
-          "Dedicated Architect",
-          "SLA Guarantee"
+          "Bespoke Visual Identity",
+          "Immersive Brand Narrative",
+          "Advanced Conversion Funnels",
+          "Ongoing Evolution & Support"
         ],
         "popular": false,
         "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
@@ -239,22 +237,23 @@
         "line1": "Have an idea?",
         "line2": "Let's build it."
       },
-      "email": "hello@vantique.studio"
+      "email": "aathi28082003@gmail.com",
+      "phone": "+91 80721 35754"
     },
     "navigation": {
       "label": "Navigation",
       "links": [
         {
-          "name": "Digital Systems",
-          "href": "#features"
+          "name": "Philosophy",
+          "href": "#philosophy"
         },
         {
           "name": "Selected Work",
           "href": "#work"
         },
         {
-          "name": "Philosophy",
-          "href": "#philosophy"
+          "name": "Digital Systems",
+          "href": "#features"
         },
         {
           "name": "Methodology",
@@ -289,7 +288,7 @@
     },
     "bottom": {
       "copyright": "Vantique Studio.",
-      "tagline": "Built on Clarity, Restraint, and Depth.",
+      "tagline": "Beautiful. Story-Driven. Conversion-Focused.",
       "backToTop": "Back to Top",
       "brandName": [
         "Vantique",

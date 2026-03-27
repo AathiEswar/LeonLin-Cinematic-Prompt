@@ -12,7 +12,7 @@ const { heading, webDesign, development, branding } = content.features as any;
 
 function DarkServiceCard() {
   return (
-    <div className="relative w-full h-[350px] flex flex-col justify-end bg-[#111] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-white/5 group">
+    <div className="relative w-full h-[300px] lg:h-[320px] flex flex-col justify-end bg-[#111] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-white/5 group">
       <div className="absolute top-6 left-6 font-data text-xs text-brand-white/40 uppercase tracking-widest">{webDesign.label}</div>
       <div className="flex flex-col gap-4 relative z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-2">
         <h3 className="font-heading font-medium text-5xl leading-tight">{webDesign.title}</h3>
@@ -58,7 +58,7 @@ function TerminalServiceCard() {
   }, [displayedText, isDeleting, msgIdx, messages]);
 
   return (
-    <div className="relative w-full h-[350px] flex flex-col justify-between bg-[#0A0A0A] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-brand-white/5">
+    <div className="relative w-full h-[300px] lg:h-[320px] flex flex-col justify-between bg-[#0A0A0A] rounded-[3rem] overflow-hidden p-8 text-brand-white border border-brand-white/5">
       <div className="flex items-center justify-between w-full">
         <div className="font-data text-xs text-brand-white/40 uppercase tracking-widest">{development.label}</div>
         <div className="flex items-center gap-2">
@@ -109,7 +109,7 @@ function LightServiceCard() {
   }, { scope: container });
 
   return (
-    <div ref={container} className="relative w-full h-[350px] flex flex-col justify-between items-center bg-brand-white rounded-[3rem] overflow-hidden p-8 border border-brand-black/10">
+    <div ref={container} className="relative w-full h-[300px] lg:h-[320px] flex flex-col justify-between items-center bg-brand-white rounded-[3rem] overflow-hidden p-8 border border-brand-black/10">
       <div className="absolute top-6 left-6 w-full text-left font-data text-xs text-brand-black/40 uppercase tracking-widest">{branding.label}</div>
       
       <div className="relative w-full max-w-[260px] flex flex-col items-center gap-10 mt-16 z-10">
@@ -149,22 +149,22 @@ export default function Features() {
   }, { scope: containerRef });
 
   return (
-    <section id="features" ref={containerRef} className="py-32 px-6 w-full max-w-7xl mx-auto bg-brand-light/20 shadow-[0_-20px_40px_rgba(0,0,0,0.02)]">
-      <div className="mb-20">
-        <h2 className="font-heading font-medium text-5xl md:text-7xl text-brand-black flex flex-col gap-2 tracking-tight">
+    <section id="features" ref={containerRef} className="w-full min-h-screen flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20 md:pt-24 pb-20 md:pb-32">
+      <div className="mb-12">
+        <h2 className="font-heading font-medium text-5xl md:text-6xl text-brand-black flex flex-col tracking-tight">
           <span>{heading.line1}</span>
-          <span className="font-drama italic text-brand-gray text-6xl md:text-8xl">{heading.line2}</span>
+          <span className="font-drama italic text-brand-gray text-6xl md:text-7xl mt-1">{heading.line2}</span>
         </h2>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:pb-24">
         <div className="feature-card">
           <DarkServiceCard />
         </div>
-        <div className="feature-card relative top-0 md:top-16">
+        <div className="feature-card relative top-0 md:top-12">
           <TerminalServiceCard />
         </div>
-        <div className="feature-card relative top-0 md:top-32">
+        <div className="feature-card relative top-0 md:top-24">
           <LightServiceCard />
         </div>
       </div>

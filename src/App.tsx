@@ -102,9 +102,9 @@ function App() {
       {/* Replaced sticky top-0 with relative positioning for GSAP pinning */}
       <main ref={mainRef} className="flex flex-col min-h-screen bg-brand-black">
         <div id="hero" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[1] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t border-white/10"><Hero /></div>
-        <div id="features" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[2] bg-brand-white origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
+        <div id="philosophy" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[2] bg-brand-white origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
         <div id="work" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[3] bg-[#0D0D0D] origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t border-white/70"><SelectedWork /></div>
-        <div id="philosophy" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[4] bg-brand-white origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Philosophy /></div>
+        <div id="features" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[4] bg-brand-white origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Features /></div>
         <div id="protocol" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[5] bg-brand-black origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t border-white/70"><Protocol /></div>
         <div id="membership" className="stack-section relative w-full min-h-screen md:mb-[15vh] z-[6] bg-brand-white origin-top md:rounded-[3rem] overflow-hidden md:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"><Membership /></div>
         <div id="footer" className="stack-section relative w-full z-[7] bg-brand-black origin-top md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:rounded-[3rem] border-t border-white/70"><Footer /></div>

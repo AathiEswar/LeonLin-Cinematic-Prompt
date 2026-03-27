@@ -54,12 +54,15 @@ export default function Membership() {
               ))}
             </ul>
             
-            <button className={cn(
-              "w-full py-4 rounded-full font-heading font-semibold text-sm transition-transform hover:scale-[1.02]",
-              p.btnClass
-            )}>
+            <a 
+              href="#footer"
+              className={cn(
+                "w-full py-4 rounded-full font-heading font-semibold text-sm transition-transform hover:scale-[1.02] inline-flex items-center justify-center",
+                p.btnClass
+              )}
+            >
               Select {p.name}
-            </button>
+            </a>
           </div>
         ))}
       </div>

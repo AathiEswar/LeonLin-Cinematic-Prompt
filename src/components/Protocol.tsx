@@ -61,19 +61,27 @@ export default function Protocol() {
 
   useGSAP(() => {
     const cards = gsap.utils.toArray('.stack-card') as HTMLElement[];
+    const mm = gsap.matchMedia();
 
-    cards.forEach((card, i) => {
-      if (i < cards.length - 1) {
-        gsap.to(card, {
-          scale: 0.8,
-          scrollTrigger: {
-            trigger: cards[i + 1],
-            start: "top bottom",
-            end: "top 0",
-            scrub: true,
-          }
-        });
-      }
+    mm.add({
+      isMobile: "(max-width: 767px)",
+      isDesktop: "(min-width: 768px)"
+    }, (context) => {
+      let { isMobile } = context.conditions as any;
+      
+      cards.forEach((card, i) => {
+        if (i < cards.length - 1) {
+          gsap.to(card, {
+            scale: 0.7,
+            scrollTrigger: {
+              trigger: cards[i + 1],
+              start: isMobile ? "top center" : "top bottom",
+              end: "top 0",
+              scrub: true,
+            }
+          });
+        }
+      });
     });
   }, { scope: containerRef });
 
