@@ -50,12 +50,6 @@ export default function Footer() {
               <a key={link.name} href={link.href} className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">{link.name}</a>
             ))}
           </div>
-          {/* <div className="flex flex-col gap-6">
-            <span className="font-data text-xs uppercase tracking-widest text-brand-white/30 mb-2">{socials.label}</span>
-            {socials.links.map((link) => (
-              <a key={link.name} href={link.href} className="font-outfit text-xl md:text-2xl hover:text-brand-white/60 transition-colors">{link.name}</a>
-            ))}
-          </div> */}
         </div>
       </div>
 

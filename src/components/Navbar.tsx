@@ -184,14 +184,6 @@ export default function Navbar() {
             <a href={`mailto:${menuFooter.contact.email}`} className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">{menuFooter.contact.email}</a>
             <a href={`https://wa.me/918072135754`} target="_blank" rel="noopener noreferrer" className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">{menuFooter.contact.phone}</a>
           </div>
-          {/* <div className="menu-footer-el flex flex-col gap-1">
-            <span className="opacity-50 tracking-[0.2em]">{menuFooter.socials.label}</span>
-            <div className="flex gap-6 pointer-events-auto">
-              {menuFooter.socials.links.map((link) => (
-                <a key={link.name} href={link.href} className="hover:text-brand-white transition-colors">{link.name}</a>
-              ))}
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
