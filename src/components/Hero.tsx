@@ -1,8 +1,11 @@
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import content from '../data/content.json';
 
 gsap.registerPlugin(useGSAP);
+
+const { headline, description, backgroundImage } = content.hero;
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -27,7 +30,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-80"
         style={{
-          backgroundImage: "url('/hero-bg.png')"
+          backgroundImage: `url('${backgroundImage}')`
         }}
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
@@ -37,14 +40,14 @@ export default function Hero() {
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pb-24 md:pb-32 lg:w-2/3 lg:mx-0 lg:pl-24">
         <h1 className="flex flex-col gap-2">
           <span className="hero-text text-brand-white font-heading font-bold text-5xl md:text-7xl lg:text-[7rem] leading-none tracking-tight">
-            Timeless,
+            {headline[0]}
           </span>
           <span className="hero-text text-brand-gray font-drama italic text-6xl md:text-8xl lg:text-[9rem] leading-none pr-4">
-            Intentional.
+            {headline[1]}
           </span>
         </h1>
         <p className="hero-text mt-8 text-brand-light font-outfit text-lg md:text-xl max-w-md font-light leading-relaxed opacity-80">
-          A design-driven digital agency crafting interfaces that feel intuitive, consistent, and built to last.
+          {description}
         </p>
       </div>
     </section>

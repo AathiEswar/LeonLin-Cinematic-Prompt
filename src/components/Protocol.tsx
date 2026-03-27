@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Settings, Activity } from 'lucide-react';
+import content from '../data/content.json';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -42,45 +43,45 @@ const Waveform = () => (
   </div>
 );
 
-const protocols = [
-  {
-    title: "1. Core Clarity",
-    subtitle: "Distilling complex requirements into focused, intuitive design systems.",
-    color: "bg-brand-white text-brand-black border border-brand-black/5",
-    Visual: HelixGear
-  },
-  {
-    title: "2. Absolute Restraint",
-    subtitle: "Stripping away noise. Building digital interfaces that endure beyond trends.",
-    color: "bg-brand-light text-brand-black",
-    Visual: LaserGrid
-  },
-  {
-    title: "3. Lasting Depth",
-    subtitle: "Fluid state management ensuring experiences remain relevant over time.",
-    color: "bg-[#EDEDED] text-brand-black",
-    Visual: Waveform
-  }
-];
+const visualComponents: Record<string, React.FC> = {
+  HelixGear,
+  LaserGrid,
+  Waveform,
+};
+
+const { heading, phases } = content.protocol;
+
+const protocols = phases.map((p) => ({
+  ...p,
+  Visual: visualComponents[p.visualKey] || (() => null),
+}));
 
 export default function Protocol() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const cards = gsap.utils.toArray('.stack-card') as HTMLElement[];
+    const mm = gsap.matchMedia();
 
-    cards.forEach((card, i) => {
-      if (i < cards.length - 1) {
-        gsap.to(card, {
-          scale: 0.8,
-          scrollTrigger: {
-            trigger: cards[i + 1],
-            start: "top bottom",
-            end: "top 0",
-            scrub: true,
-          }
-        });
-      }
+    mm.add({
+      isMobile: "(max-width: 767px)",
+      isDesktop: "(min-width: 768px)"
+    }, (context) => {
+      let { isMobile } = context.conditions as any;
+      
+      cards.forEach((card, i) => {
+        if (i < cards.length - 1) {
+          gsap.to(card, {
+            scale: 0.7,
+            scrollTrigger: {
+              trigger: cards[i + 1],
+              start: isMobile ? "top center" : "top bottom",
+              end: "top 0",
+              scrub: true,
+            }
+          });
+        }
+      });
     });
   }, { scope: containerRef });
 
@@ -90,8 +91,8 @@ export default function Protocol() {
 
       <div className="w-full max-w-7xl mx-auto px-6 pt-16 pb-16">
         <h2 className="font-heading font-medium text-4xl md:text-5xl text-brand-white/90 flex flex-col gap-2">
-          <span>Methodology</span>
-          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">& Execution.</span>
+          <span>{heading.line1}</span>
+          <span className="font-drama italic text-brand-gray text-5xl md:text-6xl">{heading.line2}</span>
         </h2>
       </div>
 

@@ -3,18 +3,13 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import content from '../data/content.json';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const menuLinks = [
-  { name: 'Studio', href: '#philosophy' },
-  { name: 'Digital Systems', href: '#features' },
-  { name: 'Selected Work', href: '#work' },
-  { name: 'Methodology', href: '#protocol' },
-  { name: 'Engagements', href: '#membership' },
-];
+const { brand, menuLinks, footer: menuFooter } = content.navbar;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -105,9 +100,9 @@ export default function Navbar() {
             : 'bg-transparent text-brand-white/80 border-transparent py-5'
         )}
       >
-        <div className="font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500 hover:text-white cursor-pointer">
-          Vantique
-        </div>
+        <a href="#hero" className="font-heading font-bold tracking-tight text-xl uppercase relative z-[60] transition-colors duration-500 hover:text-white cursor-pointer">
+          {brand}
+        </a>
 
         {/* Right Area: Links & Hamburger */}
         <div className="flex items-center relative z-[60]">
@@ -117,12 +112,22 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative flex items-center px-2 py-1 transition-all duration-[0.4s] ease-out opacity-100 group-hover/nav:opacity-40 hover:!opacity-100 hover:scale-[1.03] group/link text-brand-white/90 hover:text-white"
+                className={cn(
+                  "relative flex items-center transition-all duration-[0.4s] ease-out group/link",
+                  link.name === 'Contact'
+                    ? "px-5 py-2 rounded-full border border-brand-white/40 bg-brand-white/10 text-brand-white font-semibold shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:bg-brand-white hover:text-brand-black hover:scale-[1.03]"
+                    : "px-2 py-1 opacity-100 group-hover/nav:opacity-40 hover:!opacity-100 hover:scale-[1.03] text-brand-white/90 hover:text-white"
+                )}
               >
-                <span className="transition-transform duration-[0.4s] ease-out group-hover/link:-translate-y-[2px] block">
+                <span className={cn(
+                  "transition-transform duration-[0.4s] ease-out block",
+                  link.name !== 'Contact' && "group-hover/link:-translate-y-[2px]"
+                )}>
                   {link.name}
                 </span>
-                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-[0.4s] ease-out group-hover/link:w-full" />
+                {link.name !== 'Contact' && (
+                  <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-[0.4s] ease-out group-hover/link:w-full" />
+                )}
               </a>
             ))}
           </div>
@@ -175,15 +180,9 @@ export default function Navbar() {
         {/* Footer Info inside Menu */}
         <div className="absolute bottom-8 left-6 right-6 sm:left-12 sm:right-12 font-data text-[10px] sm:text-xs uppercase tracking-[0.1em] text-brand-white/40 flex flex-col gap-6 w-[calc(100%-3rem)] sm:w-[calc(100%-6rem)] max-w-6xl mx-auto">
           <div className="menu-footer-el flex flex-col gap-1">
-            <span className="opacity-50 tracking-[0.2em]">Contact</span>
-            <a href="mailto:hello@vantique.studio" className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">hello@vantique.studio</a>
-          </div>
-          <div className="menu-footer-el flex flex-col gap-1">
-            <span className="opacity-50 tracking-[0.2em]">Socials</span>
-            <div className="flex gap-6 pointer-events-auto">
-              <a href="#" className="hover:text-brand-white transition-colors">Awwwards</a>
-              <a href="#" className="hover:text-brand-white transition-colors">Twitter (X)</a>
-            </div>
+            <span className="opacity-50 tracking-[0.2em]">{menuFooter.contact.label}</span>
+            <a href={`mailto:${menuFooter.contact.email}`} className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">{menuFooter.contact.email}</a>
+            <a href={`https://wa.me/918072135754`} target="_blank" rel="noopener noreferrer" className="text-brand-white/80 hover:text-brand-white hover:underline transition-all underline-offset-4 pointer-events-auto">{menuFooter.contact.phone}</a>
           </div>
         </div>
       </div>

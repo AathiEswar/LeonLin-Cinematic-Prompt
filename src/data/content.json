@@ -1,0 +1,299 @@
+{
+  "navbar": {
+    "brand": "Vantique",
+    "menuLinks": [
+      {
+        "name": "Studio",
+        "href": "#philosophy"
+      },
+      {
+        "name": "Selected Work",
+        "href": "#work"
+      },
+      {
+        "name": "Digital Systems",
+        "href": "#features"
+      },
+      {
+        "name": "Methodology",
+        "href": "#protocol"
+      },
+      {
+        "name": "Engagements",
+        "href": "#membership"
+      },
+      {
+        "name": "Contact",
+        "href": "#footer"
+      }
+    ],
+    "footer": {
+      "contact": {
+        "label": "Contact",
+        "email": "aathi28082003@gmail.com",
+        "phone": "+91 80721 35754"
+      },
+      "socials": {
+        "label": "Socials",
+        "links": [
+          {
+            "name": "Awwwards",
+            "href": "#"
+          },
+          {
+            "name": "Twitter (X)",
+            "href": "#"
+          }
+        ]
+      }
+    }
+  },
+  "hero": {
+    "headline": [
+      "Timeless,",
+      "Intentional."
+    ],
+    "description": "We build visually stunning websites that tell your brand's story and turn visitors into customers.",
+    "backgroundImage": "/hero-bg.webp"
+  },
+  "features": {
+    "heading": {
+      "line1": "What",
+      "line2": "we craft."
+    },
+    "webDesign": {
+      "label": "Visual Storytelling",
+      "title": "Stunning Design",
+      "description": "Every pixel tells a story. We design websites that captivate at first glance and hold attention."
+    },
+    "development": {
+      "label": "Conversion Engine",
+      "statusLabel": "Live Build",
+      "messages": [
+        "Optimizing conversion funnels...",
+        "Building narrative flow...",
+        "Deploying storytelling UI..."
+      ]
+    },
+    "branding": {
+      "label": "Brand Narrative",
+      "title": "Story-First Identity",
+      "buttonText": "Start Project"
+    }
+  },
+  "selectedWork": {
+    "sectionLabel": "Works & Templates",
+    "heading": {
+      "line1": "Selected works",
+      "line2": "& premium templates."
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Alpana Tech",
+        "description": "alpanatech.com",
+        "tag": "2026",
+        "imageKey": "alpanaWork",
+        "link": "https://alpanatech.com"
+      },
+      {
+        "id": 2,
+        "title": "Green Decors",
+        "description": "green-decors.vercel.app",
+        "tag": "2026",
+        "imageKey": "greenWork",
+        "link": "https://green-decors.vercel.app"
+      },
+      {
+        "id": 3,
+        "title": "Avent X Headphones",
+        "description": "Sleek product landing page with strong storytelling",
+        "tag": "2026",
+        "imageKey": "aventxWork",
+        "link": "https://avent-x-headphones.vercel.app/"
+      },
+      {
+        "id": 4,
+        "title": "Perfect Agency",
+        "description": "Structured, trust-focused layout for agencies",
+        "tag": "2026",
+        "imageKey": "perfectAgencyWork",
+        "link": "https://perfect-agency-real-estate-and-fina.vercel.app/"
+      },
+      {
+        "id": 5,
+        "title": "Accounting Agency",
+        "description": "Clean and professional service-based website",
+        "tag": "2026",
+        "imageKey": "accountancyWork",
+        "link": "https://accounting-agency.vercel.app/"
+      },
+      {
+        "id": 6,
+        "title": "Good Fellas Agency",
+        "de6cription": "Premium, visually rich agency experience",
+        "tag": "2026",
+        "imageKey": "goodFellasWork",
+        "link": "https://aathieswar.github.io/GoogleStitch-MCP/"
+      }
+    ]
+  },
+  "philosophy": {
+    "sectionLabel": "Studio",
+    "heading": "Websites that look extraordinary, narrate your vision, and drive real results.",
+    "subtext": "We merge cinematic aesthetics with strategic storytelling — every section is designed to engage, every interaction engineered to convert.",
+    "capabilities": [
+      "Visual Design",
+      "Brand Storytelling",
+      "Conversion Strategy",
+      "Web Development"
+    ]
+  },
+  "protocol": {
+    "heading": {
+      "line1": "How we",
+      "line2": "bring it to life."
+    },
+    "phases": [
+      {
+        "title": "Discover Your Story",
+        "subtitle": "We dive deep into your brand, audience, and goals to uncover the narrative your website needs to tell.",
+        "visualKey": "HelixGear",
+        "color": "bg-brand-white text-brand-black border border-brand-black/5"
+      },
+      {
+        "title": "Design to Captivate",
+        "subtitle": "We craft visually striking layouts and cinematic interactions that make your brand impossible to ignore.",
+        "visualKey": "LaserGrid",
+        "color": "bg-brand-light text-brand-black"
+      },
+      {
+        "title": "Build to Convert",
+        "subtitle": "Every element is engineered for performance — fast load times, seamless flows, and clear calls-to-action that drive results.",
+        "visualKey": "Waveform",
+        "color": "bg-[#EDEDED] text-brand-black"
+      }
+    ]
+  },
+  "membership": {
+    "heading": {
+      "line1": "Invest in",
+      "line2": "your digital story."
+    },
+    "subtext": "Choose the engagement that fits your vision. Every plan delivers beauty, narrative, and results.",
+    "popularLabel": "Most Popular",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "Custom",
+        "period": "Quote",
+        "description": "A visually polished single-page website that tells your story clearly and converts from day one.",
+        "features": [
+          "Stunning Visual Design",
+          "Story-Driven Layout",
+          "Conversion-Optimized CTA",
+          "Mobile-First & Responsive"
+        ],
+        "popular": false,
+        "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
+        "cardClass": "bg-brand-white text-brand-black border border-brand-black/10 shadow-sm"
+      },
+      {
+        "name": "Growth",
+        "price": "Custom",
+        "period": "Quote",
+        "description": "A multi-page narrative experience with cinematic interactions that guide visitors toward action.",
+        "features": [
+          "Multi-Page Storytelling",
+          "Cinematic Micro-Animations",
+          "Strategic User Journeys",
+          "SEO & Performance Tuned"
+        ],
+        "popular": true,
+        "btnClass": "bg-brand-white text-brand-black hover:opacity-90",
+        "cardClass": "bg-brand-black text-brand-white transform scale-105 shadow-2xl relative z-10"
+      },
+      {
+        "name": "Premium",
+        "price": "Retainer",
+        "period": "",
+        "description": "A bespoke digital masterpiece — your brand's full story, designed to captivate and engineered to convert.",
+        "features": [
+          "Bespoke Visual Identity",
+          "Immersive Brand Narrative",
+          "Advanced Conversion Funnels",
+          "Ongoing Evolution & Support"
+        ],
+        "popular": false,
+        "btnClass": "bg-brand-black text-brand-white hover:opacity-90",
+        "cardClass": "bg-brand-light text-brand-black border border-brand-black/10 shadow-sm"
+      }
+    ]
+  },
+  "footer": {
+    "availability": {
+      "label": "Available for Work",
+      "heading": {
+        "line1": "Have an idea?",
+        "line2": "Let's build it."
+      },
+      "email": "aathi28082003@gmail.com",
+      "phone": "+91 80721 35754"
+    },
+    "navigation": {
+      "label": "Navigation",
+      "links": [
+        {
+          "name": "Philosophy",
+          "href": "#philosophy"
+        },
+        {
+          "name": "Selected Work",
+          "href": "#work"
+        },
+        {
+          "name": "Digital Systems",
+          "href": "#features"
+        },
+        {
+          "name": "Methodology",
+          "href": "#protocol"
+        },
+        {
+          "name": "Membership",
+          "href": "#membership"
+        }
+      ]
+    },
+    "socials": {
+      "label": "Socials",
+      "links": [
+        {
+          "name": "Awwwards",
+          "href": "#"
+        },
+        {
+          "name": "Twitter (X)",
+          "href": "#"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "#"
+        },
+        {
+          "name": "Instagram",
+          "href": "#"
+        }
+      ]
+    },
+    "bottom": {
+      "copyright": "Vantique Studio.",
+      "tagline": "Beautiful. Story-Driven. Conversion-Focused.",
+      "backToTop": "Back to Top",
+      "brandName": [
+        "Vantique",
+        "Studio"
+      ]
+    }
+  }
+}
